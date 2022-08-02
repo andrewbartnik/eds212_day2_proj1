@@ -7,5 +7,20 @@ output: html_document
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+#install.packages('palmerpenguins') Don't forget to comment me out!!!
+library(palmerpenguins)
+```
+
+
+```{r}
+head(penguins)
+```
+
+Scatterplot of bodymass vs flipper length
+
+```{r}
+ggplot(data=penguins, aes(x = flipper_length_mm, y = body_mass_g)) + 
+  geom_point(aes(color = species, size = species))
 ```
 
